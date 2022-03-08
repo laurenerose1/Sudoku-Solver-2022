@@ -1,6 +1,6 @@
-
+ #What is NumPy? NumPy is a Python library used for working with arrays.
 import numpy as np
-    #What is NumPy? NumPy is a Python library used for working with arrays.
+    
 
     #gameboard for Sudoku, it's a list of lists that represents a row of sudoku. 
 grid = [[5,3,0,0,7,0,0,0,0],
@@ -18,12 +18,14 @@ def possible(row, column, number):
     #Is the number appearing in the given row?
     for i in range(0,9):
         if grid[row][i] == number:
-            return False #are any of of these numbers a solution in this row?
+            #are any of of these numbers a solution in this row?
+            return False 
 
     #Is the number appearing in the given column?
     for i in range(0,9):
         if grid[i][column] == number:
-            return False #are any of of these numbers a solution in this column?
+            #are any of of these numbers a solution in this column?
+            return False 
         
     #Is the number appearing in the given square? x3 sections - regardless outcome will be 0,3,6
     x0 = (column // 3) * 3
@@ -32,14 +34,16 @@ def possible(row, column, number):
         for j in range(0,3):
             if grid[y0+i][x0+j] == number:
                 return False
-
-    return True  # if the answer to all 3 questions is no, thats a possible solution. Continues to loop through board to find solution
+# if the answer to all 3 questions is no, thats a possible solution. Continues to loop through board to find solution
+    return True  
 
 def solve():
     global grid
     for row in range(0,9):
-        for column in range(0,9): #checks to see if any fields or rows are empty
-            if grid[row][column] == 0: #fields marked as zero are considered empty
+         #checks to see if any fields or rows are empty
+        for column in range(0,9): 
+            #fields marked as zero are considered empty
+            if grid[row][column] == 0: 
                 for number in range(1,10):
                     if possible(row, column, number):
                         grid[row][column] = number
@@ -49,7 +53,8 @@ def solve():
                 return
       
     print(np.matrix(grid))
-    input('More possible solutions') #possibilities for multiple solutions
+    #possibilities for multiple solutions
+    input('More possible solutions') 
 
 solve()
 
