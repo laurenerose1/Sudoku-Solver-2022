@@ -2,7 +2,7 @@
 import numpy as np
     #What is NumPy? NumPy is a Python library used for working with arrays.
 
-    #gameboard for Sudoku, it's a list of lists that represents a row of sudoku. So we have to interate through roles
+    #gameboard for Sudoku, it's a list of lists that represents a row of sudoku. 
 grid = [[5,3,0,0,7,0,0,0,0],
         [6,0,0,1,9,5,0,0,0],
         [0,9,8,0,0,0,0,6,0],
